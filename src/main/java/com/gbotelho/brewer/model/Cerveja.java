@@ -1,12 +1,17 @@
 package com.gbotelho.brewer.model;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 public class Cerveja {
 	
-	@NotEmpty
+	@NotBlank(message = "SKU é obrigatório")
 	private String sku;
+	@NotBlank(message = "Nome é obrigatório")
 	private String nome;
+	@Size(min = 1, max = 50, message = "Descrição deve ter entre 1 à 50 caracteres")
+	private String descricao;
 	
 	public String getSku() {
 		return sku;
@@ -24,6 +29,12 @@ public class Cerveja {
 		this.nome = nome;
 	}
 
+	public String getDescricao() {
+		return descricao;
+	}
 	
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 	
 }
