@@ -6,7 +6,8 @@
 <head>
 </head>
 <body>
-	<section class="aw-layout-content  js-content" layout:fragment="conteudo">
+	<section class="aw-layout-content  js-content"
+		layout:fragment="conteudo">
 
 
 		<div class="page-header">
@@ -48,15 +49,22 @@
 
 				<div class="row">
 					<div class="form-group col-sm-3">
-						<label for="estilo">Estilo</label> <select id="estilo"
-							class="form-control">
-							<option value="">Selecione o estilo</option>
-							<option value="1">Pale lager</option>
-						</select>
+						<label for="estilo">Estilo</label>
+						<div class="bw-field-action">
+							<select id="estilo" class="form-control">
+								<option value="">Selecione o estilo</option>
+								<option value="1">Pale lager</option>
+							</select>
+							<div class="bw-field-action__icon">
+								<a href="#" data-toggle="modal" data-target="#modalCadastroRapidoEstilo"> <i
+									class="glyphicon glyphicon-plus-sign bw-glyphicon-large"></i>
+								</a>
+							</div>
+						</div>
 					</div>
 
 					<div class="form-group col-sm-3">
-						<label for="sabor">Sabor</label> <select id="sabor"
+						<label for="sabor">Sabor</label><select id="sabor"
 							class="form-control">
 							<option value="">Selecione o sabor</option>
 							<option value="1">Adocicada</option>
@@ -66,7 +74,8 @@
 					<div class="form-group col-sm-3">
 						<label for="teorAlcoolico">Teor Alcoólico</label>
 						<div class="input-group">
-							<input id="teorAlcoolico" type="text" class="form-control" />
+							<input id="teorAlcoolico" type="text"
+								class="form-control js-decimal" />
 							<div class="input-group-addon">%</div>
 						</div>
 					</div>
@@ -90,14 +99,14 @@
 						<label for="preco">Preço</label>
 						<div class="input-group">
 							<div class="input-group-addon">R$</div>
-							<input id="preco" type="text" class="form-control" />
+							<input id="preco" type="text" class="form-control js-decimal" />
 						</div>
 					</div>
 
 					<div class="form-group col-sm-3">
 						<label for="comissao">Comissão</label>
 						<div class="input-group">
-							<input id="comissao" type="text" class="form-control" />
+							<input id="comissao" type="text" class="form-control js-decimal" />
 							<div class="input-group-addon">%</div>
 						</div>
 					</div>
@@ -105,7 +114,7 @@
 					<div class="form-group col-sm-3">
 						<label for="estoque">Estoque</label>
 						<div class="input-group">
-							<input id="estoque" type="text" class="form-control" />
+							<input id="estoque" type="text" class="form-control js-plain" />
 						</div>
 					</div>
 				</div>
@@ -115,6 +124,8 @@
 				</div>
 			</form>
 		</div>
+		
+		<div th:replace="estilo/CadastroRapidoEstilo :: modal"></div>
 
 	</section>
 
