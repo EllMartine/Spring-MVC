@@ -5,6 +5,7 @@
 	layout:decorator="'layout/LayoutPadrao'">
 <head>
 	<title>Cadastro de usuário</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors/bootstrap-switch.min.css}" />
 </head>
 <body>
 	<section class="aw-layout-content  js-content"
@@ -49,12 +50,12 @@
 						<label for="confirmacaoSenha">Confirmação de senha</label> 
 						<input id="confirmacaoSenha" type="text" class="form-control" />
 					</div>
-					<div class="form-group col-sm-2">
+					<div class="form-group col-sm-3">
 						<label for="status">Status</label>
 						<div>
-							<div class="checkbox checkbox-inline">
-								<input type="checkbox" name="status">
-								<label>Ativo</label>
+							<div>
+								<input type="checkbox" name="status" class="js-status" data-size="small" 
+								data-off-color="danger" data-on-text="Ativo" data-off-text="Inativo">
 							</div>
 						</div>					
 					</div>
@@ -81,10 +82,15 @@
 				</div>
 			</form>
 		</div>
-		
-		<div th:replace="estilo/CadastroRapidoEstilo :: modal"></div>
 
 	</section>
+	
+	<th:block layout:fragment="javascript-extra">
+		<script th:src="@{/javascripts/vendors/bootstrap-switch.min.js}"></script>
+		<script>
+			$('.js-status').bootstrapSwitch();
+		</script>
+	</th:block>
 
 </body>
 
