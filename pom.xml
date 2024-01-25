@@ -107,5 +107,19 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>1.7.21</version>
 		</dependency>
+		<!-- JPA / Hibernate-->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.1.0.Final</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Hibernate - java 8 support-->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-java8</artifactId>
+			<version>5.1.0.Final</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 </project>
